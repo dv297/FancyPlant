@@ -1,0 +1,22 @@
+enum DataPointType {
+  TEMPERATURE
+  HUMIDITY
+}
+
+type DataPoint @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  type: DataPointType
+  value: String
+  Device: Device @connection
+}
+
+type Device @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  Users: [User] @connection(keyName: "byDevice", fields: ["id"])
+}
+
+type User @model @auth(rules: [{allow: public}]) @key(name: "byDevice", fields: ["deviceID"]) {
+  id: ID!
+  deviceID: ID
+}

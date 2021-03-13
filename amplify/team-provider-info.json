@@ -10,6 +10,11 @@
       "StackName": "amplify-fancyplant-dev-172013",
       "StackId": "arn:aws:cloudformation:us-east-1:138412287382:stack/amplify-fancyplant-dev-172013/aae919c0-8452-11eb-98ab-12a640cb526e",
       "AmplifyAppId": "dku4rxcyvur70"
+    },
+    "categories": {
+      "auth": {
+        "FancyPlant": {}
+      }
     }
   }
 }
