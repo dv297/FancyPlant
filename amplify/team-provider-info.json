@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fancyplant-dev-172013-authRole",
+      "UnauthRoleArn": "arn:aws:iam::138412287382:role/amplify-fancyplant-dev-172013-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::138412287382:role/amplify-fancyplant-dev-172013-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-fancyplant-dev-172013-deployment",
+      "UnauthRoleName": "amplify-fancyplant-dev-172013-unauthRole",
+      "StackName": "amplify-fancyplant-dev-172013",
+      "StackId": "arn:aws:cloudformation:us-east-1:138412287382:stack/amplify-fancyplant-dev-172013/aae919c0-8452-11eb-98ab-12a640cb526e",
+      "AmplifyAppId": "dku4rxcyvur70"
+    }
+  }
+}
