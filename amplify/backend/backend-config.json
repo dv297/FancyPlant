@@ -1,6 +1,6 @@
 {
   "auth": {
-    "FancyPlant": {
+    "fancyplant66fc2ff9": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

@@ -1,8 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-//import { withAuthenticator } from "aws-amplify-react-native";
+import Amplify from "aws-amplify";
+import { withAuthenticator } from "aws-amplify-react-native";
+import awsconfig from "./src/aws-exports";
 import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import Logo from "./assets/logo.png";
+
+Amplify.configure(awsconfig);
 
 let dimensions = Dimensions.get("window");
 
@@ -16,8 +20,7 @@ const App = () => {
   );
 };
 
-// export default withAuthenticator(App);
-export default App;
+export default withAuthenticator(App);
 
 const styles = StyleSheet.create({
   container: {

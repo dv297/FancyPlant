@@ -1,4 +1,22 @@
 {
+  "daniel": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fancyplant-daniel-235153-authRole",
+      "UnauthRoleArn": "arn:aws:iam::138412287382:role/amplify-fancyplant-daniel-235153-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::138412287382:role/amplify-fancyplant-daniel-235153-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-fancyplant-daniel-235153-deployment",
+      "UnauthRoleName": "amplify-fancyplant-daniel-235153-unauthRole",
+      "StackName": "amplify-fancyplant-daniel-235153",
+      "StackId": "arn:aws:cloudformation:us-east-1:138412287382:stack/amplify-fancyplant-daniel-235153/16336420-8457-11eb-a6f6-0a0703eab8ad",
+      "AmplifyAppId": "dku4rxcyvur70"
+    },
+    "categories": {
+      "auth": {
+        "fancyplant66fc2ff9": {}
+      }
+    }
+  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-fancyplant-dev-172013-authRole",
