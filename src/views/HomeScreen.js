@@ -1,28 +1,14 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Auth } from "aws-amplify";
 import { withAuthenticator } from "aws-amplify-react-native";
 import { StyleSheet, Image, Dimensions } from "react-native";
 import Logo from "../../assets/logo.png";
 import { Container, Button, Text } from "native-base";
-import * as Font from "expo-font";
-import { Ionicons } from "@expo/vector-icons";
 
 let dimensions = Dimensions.get("window");
 
 const HomeScreen = () => {
-  const [isReady, setIsReady] = useState(false);
-
-  useEffect(() => {
-    Font.loadAsync({
-      Roboto: require("native-base/Fonts/Roboto.ttf"),
-      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-      ...Ionicons.font,
-    });
-
-    setIsReady(true);
-  });
-
   const onSignOutPress = () => {
     try {
       Auth.signOut();
@@ -30,7 +16,7 @@ const HomeScreen = () => {
       console.log("Error Signing Out: ", error);
     }
   };
-  
+
   return (
     <Container>
       <Image style={styles.tinyLogo} source={Logo} alt="FancyPlant logo" />
