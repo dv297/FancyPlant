@@ -1,8 +1,7 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { Auth } from "aws-amplify";
 import { withAuthenticator } from "aws-amplify-react-native";
-import { StyleSheet, Image, Dimensions } from "react-native";
+import { StyleSheet, Image, Dimensions, Text } from "react-native";
 import Logo from "../../assets/logo.png";
 import { Container } from "native-base";
 import PrimaryButton from "../components/PrimaryButton.js";
@@ -24,7 +23,6 @@ const HomeScreen = () => {
       <PrimaryButton onPressAction={onSignOutPress}>
         <Text>Sign Out</Text>
       </PrimaryButton>
-      <StatusBar style="auto" />
     </Container>
   );
 };
