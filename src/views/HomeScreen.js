@@ -21,7 +21,7 @@ const HomeScreen = () => {
   return (
     <Container>
       <Image style={styles.tinyLogo} source={Logo} alt="FancyPlant logo" />
-      <PrimaryButton onPressAction={onSignOutPress} displayText="Sign Out">
+      <PrimaryButton onPressAction={onSignOutPress}>
         <Text>Sign Out</Text>
       </PrimaryButton>
       <StatusBar style="auto" />
