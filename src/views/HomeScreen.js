@@ -4,7 +4,8 @@ import { Auth } from "aws-amplify";
 import { withAuthenticator } from "aws-amplify-react-native";
 import { StyleSheet, Image, Dimensions } from "react-native";
 import Logo from "../../assets/logo.png";
-import { Container, Button, Text } from "native-base";
+import { Container } from "native-base";
+import PrimaryButton from "../components/PrimaryButton.js";
 
 let dimensions = Dimensions.get("window");
 
@@ -20,10 +21,9 @@ const HomeScreen = () => {
   return (
     <Container>
       <Image style={styles.tinyLogo} source={Logo} alt="FancyPlant logo" />
-      <Text>Home</Text>
-      <Button primary onPress={onSignOutPress}>
+      <PrimaryButton onPressAction={onSignOutPress}>
         <Text>Sign Out</Text>
-      </Button>
+      </PrimaryButton>
       <StatusBar style="auto" />
     </Container>
   );
