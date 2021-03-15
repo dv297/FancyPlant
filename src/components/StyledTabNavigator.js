@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Ionicons } from "@expo/vector-icons";
+import { DarkGreen, LightGreen } from "../colors";
 
 const StyledTabNavigator = (props) => {
   const { tab: Tab, children } = props;
@@ -21,10 +22,10 @@ const StyledTabNavigator = (props) => {
         },
       })}
       tabBarOptions={{
-        activeTintColor: "#578E44",
+        activeTintColor: DarkGreen,
         inactiveTintColor: "#333",
-        inactiveBackgroundColor: "#e9ffb9",
-        activeBackgroundColor: "#e9ffb9",
+        inactiveBackgroundColor: LightGreen,
+        activeBackgroundColor: LightGreen,
       }}
     >
       {children}

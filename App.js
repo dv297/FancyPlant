@@ -1,15 +1,18 @@
 import "react-native-gesture-handler";
-import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
+import { StatusBar } from "expo-status-bar";
 import AppLoading from "expo-app-loading";
 import Amplify from "aws-amplify";
 import { withAuthenticator } from "aws-amplify-react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import awsconfig from "./src/aws-exports";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
+import { StyleProvider } from "native-base";
+
+import awsconfig from "./src/aws-exports";
+import getTheme from "./native-base-theme/components";
+import platform from "./native-base-theme/variables/platform";
 import HomeScreen from "./src/views/HomeScreen";
 import SettingsScreen from "./src/views/SettingsScreen";
 import StyledTabNavigator from "./src/components/StyledTabNavigator";
@@ -23,7 +26,6 @@ Amplify.configure({
   },
 });
 
-const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const App = () => {
@@ -44,13 +46,15 @@ const App = () => {
   }
 
   return (
-    <NavigationContainer>
-      <StyledTabNavigator tab={Tab}>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-      </StyledTabNavigator>
-      <StatusBar hidden />
-    </NavigationContainer>
+    <StyleProvider style={getTheme(platform)}>
+      <NavigationContainer>
+        <StyledTabNavigator tab={Tab}>
+          <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Settings" component={SettingsScreen} />
+        </StyledTabNavigator>
+        <StatusBar hidden />
+      </NavigationContainer>
+    </StyleProvider>
   );
 };
 

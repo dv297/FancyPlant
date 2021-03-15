@@ -1,37 +1,35 @@
 import React from "react";
 import { Auth } from "aws-amplify";
-import { withAuthenticator } from "aws-amplify-react-native";
-import { StyleSheet, Image, Dimensions, Text } from "react-native";
+import { Image, Dimensions } from "react-native";
+import { Container, connectStyle } from "native-base";
+
 import Logo from "../../assets/logo.png";
-import { Container } from "native-base";
-import PrimaryButton from "../components/PrimaryButton.js";
 
 let dimensions = Dimensions.get("window");
 
-const HomeScreen = () => {
-  const onSignOutPress = () => {
-    try {
-      Auth.signOut();
-    } catch (error) {
-      console.log("Error Signing Out: ", error);
-    }
-  };
+class HomeScreen extends React.Component {
+  render() {
+    const onSignOutPress = () => {
+      try {
+        Auth.signOut();
+      } catch (error) {
+        console.log("Error Signing Out: ", error);
+      }
+    };
 
-  return (
-    <Container>
-      <Image style={styles.tinyLogo} source={Logo} alt="FancyPlant logo" />
-      <PrimaryButton onPressAction={onSignOutPress}>
-        <Text>Sign Out</Text>
-      </PrimaryButton>
-    </Container>
-  );
-};
+    return (
+      <Container>
+        <Image style={styles.tinyLogo} source={Logo} alt="FancyPlant logo" />
+      </Container>
+    );
+  }
+}
 
-const styles = StyleSheet.create({
+const styles = {
   tinyLogo: {
     width: dimensions.width,
     height: Math.round((dimensions.width * 9) / 16),
   },
-});
+};
 
-export default withAuthenticator(HomeScreen);
+export default connectStyle("platform", styles)(HomeScreen);
