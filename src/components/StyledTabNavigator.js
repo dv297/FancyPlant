@@ -9,6 +9,7 @@ const StyledTabNavigator = (props) => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
+        // eslint-disable-next-line react/prop-types
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
@@ -39,10 +40,10 @@ StyledTabNavigator.propTypes = {
   /**
    * The Tab component returned by React Navigation's createBottomTabNavigator function.
    */
-  tab: PropTypes.object,
+  tab: PropTypes.object.isRequired,
 
   /**
    * The content to put under the TabNavigator.
    */
-  children: PropTypes.any,
+  children: PropTypes.any.isRequired,
 };

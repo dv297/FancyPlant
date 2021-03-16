@@ -17,6 +17,7 @@ class SettingsScreen extends React.Component {
     try {
       Auth.signOut();
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log("Error Signing Out: ", error);
     }
   };

@@ -1,29 +1,10 @@
 import React from "react";
-import { Auth } from "aws-amplify";
 import { Image, Dimensions } from "react-native";
 import { Container, connectStyle } from "native-base";
 
 import Logo from "../../assets/logo.png";
 
-let dimensions = Dimensions.get("window");
-
-class HomeScreen extends React.Component {
-  render() {
-    const onSignOutPress = () => {
-      try {
-        Auth.signOut();
-      } catch (error) {
-        console.log("Error Signing Out: ", error);
-      }
-    };
-
-    return (
-      <Container>
-        <Image style={styles.tinyLogo} source={Logo} alt="FancyPlant logo" />
-      </Container>
-    );
-  }
-}
+const dimensions = Dimensions.get("window");
 
 const styles = {
   tinyLogo: {
@@ -31,5 +12,15 @@ const styles = {
     height: Math.round((dimensions.width * 9) / 16),
   },
 };
+
+class HomeScreen extends React.Component {
+  render() {
+    return (
+      <Container>
+        <Image style={styles.tinyLogo} source={Logo} alt="FancyPlant logo" />
+      </Container>
+    );
+  }
+}
 
 export default connectStyle("platform", styles)(HomeScreen);
