@@ -1,9 +1,8 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
     "web": "expo start --web",
     "eject": "expo eject",
     "prettier": "prettier --write '**/*.js'",
@@ -17,23 +16,27 @@
     "@react-navigation/bottom-tabs": "^5.11.8",
     "@react-navigation/native": "^5.9.3",
     "@react-navigation/stack": "^5.14.3",
-    "aws-amplify": "^3.3.24",
+    "amazon-cognito-identity-js": "^4.6.0",
+    "aws-amplify": "^3.3.25",
     "aws-amplify-react-native": "^4.3.2",
     "classnames": "^2.2.6",
     "expo": "^40.0.1",
     "expo-app-loading": "^1.0.1",
     "expo-font": "~8.4.0",
+    "expo-splash-screen": "~0.8.0",
     "expo-status-bar": "~1.0.3",
+    "expo-updates": "~0.4.0",
     "graphql": "^15.5.0",
     "native-base": "^2.15.2",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
+    "react-native": "~0.63.4",
     "react-native-gesture-handler": "~1.8.0",
     "react-native-reanimated": "~1.13.0",
     "react-native-safe-area-context": "3.1.9",
     "react-native-screens": "~2.15.2",
+    "react-native-unimodules": "~0.12.0",
     "react-native-web": "~0.13.12",
     "tailwind-rn": "^3.0.1"
   },
@@ -41,6 +44,7 @@
     "@babel/core": "^7.9.0",
     "@babel/eslint-parser": "^7.13.10",
     "@babel/eslint-plugin": "^7.13.10",
+    "babel-jest": "~25.2.6",
     "eslint": "^7.22.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-node": "^4.1.0",
@@ -52,8 +56,10 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.8",
+    "jest": "~25.2.6",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
+    "react-test-renderer": "~16.13.1",
     "tailwindcss": "^2.0.3"
   },
   "private": true,
@@ -64,5 +70,7 @@
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
-  }
+  },
+  "name": "FancyPlant",
+  "version": "1.0.0"
 }
