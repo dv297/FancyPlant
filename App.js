@@ -1,5 +1,6 @@
 import "react-native-gesture-handler";
 import React, { useState, useEffect } from "react";
+import { Provider } from "react-redux";
 import { View } from "react-native";
 import tailwind from "tailwind-rn";
 import { StatusBar } from "expo-status-bar";
@@ -21,6 +22,7 @@ import AddANewDeviceScreen from "./src/views/AddANewDeviceScreen";
 import ConfigureDeviceScreen from "./src/views/ConfigureDeviceScreen";
 import SettingsScreen from "./src/views/SettingsScreen";
 import StyledTabNavigator from "./src/components/StyledTabNavigator";
+import store from "./src/store";
 
 Amplify.configure({
   ...awsconfig,
@@ -69,17 +71,19 @@ const App = () => {
   }
 
   return (
-    <View style={tailwind("h-full w-full")}>
-      <StyleProvider style={getTheme(platform)}>
-        <NavigationContainer>
-          <StyledTabNavigator tab={Tab}>
-            <Tab.Screen name="Home" component={HomeStackNavigator} />
-            <Tab.Screen name="Settings" component={SettingsScreen} />
-          </StyledTabNavigator>
-          <StatusBar hidden />
-        </NavigationContainer>
-      </StyleProvider>
-    </View>
+    <Provider store={store}>
+      <View style={tailwind("h-full w-full")}>
+        <StyleProvider style={getTheme(platform)}>
+          <NavigationContainer>
+            <StyledTabNavigator tab={Tab}>
+              <Tab.Screen name="Home" component={HomeStackNavigator} />
+              <Tab.Screen name="Settings" component={SettingsScreen} />
+            </StyledTabNavigator>
+            <StatusBar hidden />
+          </NavigationContainer>
+        </StyleProvider>
+      </View>
+    </Provider>
   );
 };
 
