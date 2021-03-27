@@ -1,8 +1,9 @@
 import React from "react";
 import { Image, Dimensions } from "react-native";
-import { Container, connectStyle } from "native-base";
+import { Container } from "native-base";
 
 import Logo from "../../assets/logo.png";
+import DeviceListContainer from "../components/DeviceListContainer";
 
 const dimensions = Dimensions.get("window");
 
@@ -13,14 +14,13 @@ const styles = {
   },
 };
 
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <Container>
-        <Image style={styles.tinyLogo} source={Logo} alt="FancyPlant logo" />
-      </Container>
-    );
-  }
-}
+const HomeScreen = () => {
+  return (
+    <Container>
+      <Image style={styles.tinyLogo} source={Logo} alt="FancyPlant logo" />
+      <DeviceListContainer />
+    </Container>
+  );
+};
 
-export default connectStyle("platform", styles)(HomeScreen);
+export default HomeScreen;
